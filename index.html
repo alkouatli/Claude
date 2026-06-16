@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaked Messages Reveal Unconventional Military Strategy - WSJ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* WSJ Header */
+        .wsj-header {
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            padding: 12px 0;
+        }
+
+        .wsj-logo {
+            text-align: center;
+            font-family: 'Escrow Condensed', Georgia, serif;
+            font-size: 28px;
+            font-weight: normal;
+            color: #000;
+            letter-spacing: 3px;
+        }
+
+        /* Navigation */
+        .wsj-nav {
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            padding: 12px 0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .wsj-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .wsj-nav a {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: normal;
+            font-family: Arial, sans-serif;
+        }
+
+        .wsj-nav a:hover {
+            color: #666;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+        }
+
+        .article-column {
+            max-width: 680px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #0274b6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 44px;
+            line-height: 1.15;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-family: Georgia, serif;
+            color: #000;
+        }
+
+        .article-subtitle {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        .author {
+            color: #0274b6;
+            text-decoration: none;
+        }
+
+        .follow-btn {
+            background: none;
+            border: 1px solid #d4d4d4;
+            padding: 2px 8px;
+            font-size: 11px;
+            border-radius: 3px;
+            cursor: pointer;
+            color: #0274b6;
+            font-family: Arial, sans-serif;
+        }
+
+        .updated-time {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .action-bar {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+            border-top: 1px solid #d4d4d4;
+            border-bottom: 1px solid #d4d4d4;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            font-family: Georgia, serif;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content .drop-cap:first-letter {
+            float: left;
+            font-size: 72px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            font-weight: normal;
+        }
+
+        /* iMessage Container */
+        .imessage-container {
+            background: #f8f8f8;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 40px 0;
+        }
+
+        .imessage-header {
+            text-align: center;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .imessage-subheader {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-family: Georgia, serif;
+            font-style: italic;
+        }
+
+        .imessage-chat {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .message.sent {
+            justify-content: flex-end;
+        }
+
+        .message.received {
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 15px;
+            line-height: 1.4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            word-wrap: break-word;
+        }
+
+        .message.sent .message-bubble {
+            background-color: #0274b6;
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.received .message-bubble {
+            background-color: #e5e5ea;
+            color: #000;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #999;
+            margin: 8px 0;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .contact-name {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+            margin-left: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 600;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            border-left: 3px solid #000;
+            padding-left: 24px;
+            margin: 40px 0;
+            font-size: 26px;
+            font-style: italic;
+            color: #000;
+            line-height: 1.4;
+            font-family: Georgia, serif;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding-top: 40px;
+        }
+
+        .ad-unit {
+            background: #f8f8f8;
+            border: 1px solid #d4d4d4;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #d4d4d4;
+            color: #666;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .article-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 32px;
+            }
+
+            .article-content {
+                font-size: 17px;
+            }
+
+            .message-bubble {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WSJ Header -->
+    <header class="wsj-header">
+        <div class="wsj-logo">THE WALL STREET JOURNAL.</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="wsj-nav">
+        <div class="nav-container">
+            <ul>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">U.S.</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Economy</a></li>
+                <li><a href="#">Tech</a></li>
+                <li><a href="#">Markets & Finance</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#">Arts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Article Column -->
+        <div class="article-column">
+            <div class="breadcrumb">WORLD | MIDDLE EAST</div>
+
+            <div class="article-header">
+                <h1 class="article-title">Leaked Messages Reveal Unconventional Military Strategy</h1>
+                <p class="article-subtitle">Classified texts between President Trump and Defense Secretary Hegseth expose bizarre plan to bomb Iran with water balloons</p>
+
+                <div class="article-meta">
+                    <span>By <a href="#" class="author">Robert Woodstein</a></span>
+                    <button class="follow-btn">Follow</button>
+                </div>
+
+                <div class="updated-time">Updated March 5, 2026 2:34 am ET</div>
+
+                <div class="action-bar">
+                    <button class="action-btn">↗</button>
+                    <button class="action-btn">🔖</button>
+                    <button class="action-btn">A</button>
+                    <button class="action-btn">💬 578</button>
+                    <button class="action-btn">🎁 Gift unlocked article</button>
+                    <button class="action-btn">🎧 Listen (8 min)</button>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p class="drop-cap">In what may be the most bizarre military planning session ever documented, leaked text messages between President Donald Trump and Defense Secretary Pete Hegseth reveal an extraordinary proposal to bomb Iran—not with conventional weapons, but with water balloons.</p>
+
+                <p>The messages, obtained by The Wall Street Journal through anonymous sources within the Pentagon, show the two leaders engaged in what appears to be a serious strategic discussion about deploying massive quantities of water balloons over Iranian territory. Defense experts are baffled.</p>
+
+                <div class="imessage-container">
+                    <div class="imessage-header">The Initial Proposal</div>
+                    <div class="imessage-subheader">Trump initiates the water balloon strategy</div>
+                    <div class="imessage-chat">
+                        <div class="message sent">
+                            <div class="message-bubble">Pete, I have the BEST idea. Nobody's ever thought of this before. Believe me.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="contact-name">Pete Hegseth</div>
+                                <div class="message-bubble">Mr. President, what's on your mind?</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Water balloons. Millions of them. We drop them on Iran.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">I'm sorry, sir... water balloons?</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Think about it. No casualties. No radiation. Just confusion. TREMENDOUS confusion.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">That's... actually kind of genius in a weird way</div>
+                            </div>
+                        </div>
+
+                        <div class="message-time">Monday 11:32 AM</div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">I know. I'm a very stable genius. Let's plan this.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">I'll get the Joint Chiefs on this immediately</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>General Mark Kelley (ret.), former Chairman of the Joint Chiefs of Staff, expressed disbelief when shown the messages. "In my 40 years of military service, I have never encountered anything remotely resembling this strategic approach," he says. "The use of water balloons as a military deterrent violates every principle in the Joint Doctrine Manual."</p>
+
+                <p>Yet the conversation continued over several days, with both leaders appearing to take the concept increasingly seriously. Military historians note this may be the first time a sitting president has proposed using children's party supplies as instruments of foreign policy.</p>
+
+                <div class="pull-quote">
+                    "This isn't just unprecedented—it's incomprehensible. You can't wage war with water balloons."
+                </div>
+
+                <p>The messages reveal detailed logistical planning, including discussion of payload size, delivery mechanisms, and even the optimal water-to-balloon ratio for maximum psychological impact.</p>
+
+                <div class="imessage-container">
+                    <div class="imessage-header">Planning the Logistics</div>
+                    <div class="imessage-subheader">The discussion turns technical</div>
+                    <div class="imessage-chat">
+                        <div class="message received">
+                            <div>
+                                <div class="contact-name">Pete Hegseth</div>
+                                <div class="message-bubble">Sir, I talked to logistics. They're asking about balloon color preferences</div>
+                            </div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">Also, how many are we talking? Thousands? Millions?</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Red, white, and blue obviously. This is America. And we need BILLIONS.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">Billions of water balloons. Got it. The Pentagon is... adjusting to this concept.</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Tell them it's cheaper than F-35s and more effective. Trust me.</div>
+                        </div>
+
+                        <div class="message-time">Tuesday 3:22 PM</div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">Should we involve the Air Force or is this more of a drone operation?</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Both! And maybe some helicopters. Make it SPECTACULAR!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>According to sources within the Department of Defense, the plan was met with stunned silence during an emergency briefing. "Nobody knew how to respond," said one senior official who spoke on condition of anonymity. "Do you tell the Commander-in-Chief that water balloons aren't a viable military option? How does that conversation even start?"</p>
+
+                <p>The messages also reveal concerns about international law and diplomatic fallout. However, both Trump and Hegseth appeared unconcerned about traditional military protocols, instead focusing on what they termed "shock and wetness" as a strategic doctrine.</p>
+
+                <p>"This represents a complete departure from established military strategy," notes Dr. Patricia Morrison, a defense policy expert at Georgetown University. "It's as if someone decided to rewrite Sun Tzu's 'Art of War' but replaced all the weapons with carnival games. The mind reels."</p>
+
+                <div class="imessage-container">
+                    <div class="imessage-header">The Final Escalation</div>
+                    <div class="imessage-subheader">When the plan reaches peak absurdity</div>
+                    <div class="imessage-chat">
+                        <div class="message sent">
+                            <div class="message-bubble">Pete, I've been thinking. What if we freeze the water first?</div>
+                        </div>
+
+                        <div class="message-time">Wednesday 9:18 AM</div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Ice balloons. They'd hurt more. Still not lethal though.</div>
+                        </div>
+
+                        <div class="message-time">Wednesday 9:19 AM</div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="contact-name">Pete Hegseth</div>
+                                <div class="message-bubble">Mr. President, the physics team says frozen balloons might actually be dangerous</div>
+                            </div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">They're recommending we stick with liquid water at room temperature</div>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">Fine. But make them BIG. The biggest water balloons anyone's ever seen.</div>
+                        </div>
+
+                        <div class="message received">
+                            <div>
+                                <div class="message-bubble">Yes sir. I'll tell procurement to find industrial-size balloons.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>International reaction has been swift and bewildered. Iran's Foreign Ministry issued a statement calling the plan "the most bizarre provocation in the history of international relations." The United Nations Security Council held an emergency session, though sources say most delegates spent it trying not to laugh.</p>
+
+                <p>NATO allies have privately expressed concern, with one European defense minister reportedly asking, "Is this real? Are we living in a simulation?" The French President was overheard saying, "Mon Dieu, c'est des ballons d'eau," while shaking his head in disbelief.</p>
+
+                <p>As this story develops, military experts, diplomats, and political scientists struggle to analyze what may be the most unconventional approach to foreign policy in modern history. Defense contractors are reportedly confused about whether to bid on the water balloon contract.</p>
+
+                <p>"Future historians will look back at these messages and ask themselves if this actually happened," concludes Dr. Morrison. "The answer, incredibly, appears to be yes. Someone in the White House seriously proposed bombing Iran with water balloons, and the Secretary of Defense went along with it. We're through the looking glass now."</p>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="ad-unit">Advertisement</div>
+            <div class="ad-unit">Advertisement</div>
+            <div class="ad-unit">Advertisement</div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dow Jones & Company, Inc. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
